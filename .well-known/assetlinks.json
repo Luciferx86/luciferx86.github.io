@@ -1,0 +1,15 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.luciferx86.miscridex",
+            "sha256_cert_fingerprints": [
+                "D3:F5:08:B1:0A:DD:50:AB:44:9A:8E:53:16:A6:83:3A:FA:75:68:12:5B:66:48:C7:20:BA:F6:C6:75:DD:3A:BB",
+                "70:38:7F:2A:F8:3A:72:93:51:EC:7A:C8:F0:B7:7C:37:40:17:3E:2F:B3:64:12:ED:D9:8C:6E:AC:97:C3:32:3E"
+            ]
+        }
+    }
+]
