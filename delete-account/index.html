@@ -6,17 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Account - Miscridex</title>
-    <meta charset="utf-8" />
-    <meta content="Delete Account - Miscridex" property="og:title" />
-    <meta content="Instructions to request deletion of your account and personal data from Miscridex."
-        property="og:description" />
-    <meta content="https://luciferx86.github.io/delete-account/" property="og:url" />
-    <meta content="website" property="og:type" />
-    <!-- Twitter Card -->
-    <meta content="summary_large_image" name="twitter:card" />
-    <meta content="Delete Account - Miscridex" name="twitter:title" />
-    <meta content="Instructions to request deletion of your account and personal data from Miscridex."
-        name="twitter:description" />
 
     <style>
         body {
@@ -24,7 +13,7 @@
             color: white;
             text-align: center;
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Outfit', Arial, sans-serif;
         }
 
         .top-bar {
@@ -46,6 +35,7 @@
 
         h2 {
             font-family: 'BorisBlack';
+            color: #FFCC00;
         }
 
         p {
@@ -56,6 +46,87 @@
             font-family: 'Outfit';
         }
 
+        .highlight {
+            color: #FFCC00;
+            font-weight: bold;
+        }
+
+        .form-container {
+            margin: 30px auto;
+            max-width: 600px;
+        }
+
+        input,
+        textarea {
+            width: 90%;
+            max-width: 500px;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: none;
+            font-family: 'Outfit';
+            font-size: 16px;
+            background-color: #222;
+            color: white;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #FFCC00;
+            color: black;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e6b800;
+        }
+
+        .loader {
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-top: 4px solid #FFCC00;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .success-message {
+            color: #cbf051;
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 18px;
+            display: none;
+        }
+
+        .error-message {
+            color: #ff6666;
+            font-size: 0.9em;
+            margin-top: -5px;
+            display: none;
+        }
+
         .local-logo {
             margin-top: 30px;
         }
@@ -63,49 +134,82 @@
         .local-logo img {
             height: 80px;
         }
-
-        .highlight {
-            color: #FFCC00;
-            font-weight: bold;
-        }
     </style>
 </head>
 
 <body>
-    <!-- Top Bar -->
     <div class="top-bar">
         <img src="/assets/logo.png" alt="Header Logo">
     </div>
 
-    <!-- Content -->
     <h1>Delete Your Account</h1>
     <p>
         If you would like to delete your account and associated data from <span class="highlight">Miscridex</span>,
-        please follow the instructions below. Once deleted, all data will be permanently removed and cannot be
-        recovered.
+        please fill out the form below. Once submitted, all data will be permanently removed and cannot be recovered.
     </p>
 
-    <h2 style="color:#FFCC00;">How to Request Deletion</h2>
-    <p>
-        Please send an email to <a href="mailto:akshayarora.10.6.97@gmail.com"
-            style="color:#cbf051;">akshayarora.10.6.97@gmail.com</a>
-        from the email address linked to your account.
-        We will confirm your request and permanently delete your account and data
-        within 7 business days.
-    </p>
+    <div class="form-container">
+        <form id="deleteForm">
+            <input type="email" id="email" placeholder="Enter your email address" required>
+            <div class="error-message" id="emailError">Please enter a valid email address.</div>
 
-    <h2 style="color:#FFCC00;">Need Help?</h2>
+            <textarea id="comments" placeholder="Optional comments (reason for deletion)"></textarea>
+
+            <button type="submit">Send Request</button>
+        </form>
+
+        <div class="loader" id="loader"></div>
+        <div class="success-message" id="successMessage">
+            ✅ We will process this within the next few days.<br>
+            If you change your mind during this period, you can reach out to our support team at
+            <a href="mailto:akshayarora.10.6.97@gmail.com" style="color:#cbf051;">akshayarora.10.6.97@gmail.com</a> to
+            restore your account.
+        </div>
+    </div>
+
+    <h2>Need Help?</h2>
     <p>
         If you have any questions about account deletion, please contact us at
         <a href="mailto:akshayarora.10.6.97@gmail.com" style="color:#cbf051;">akshayarora.10.6.97@gmail.com</a>.
     </p>
 
-    <!-- Bigger Local Logo before store buttons -->
     <div class="local-logo">
         <img src="/assets/logo.png" alt="Main Logo">
     </div>
+    <script>
+        const form = document.getElementById('deleteForm');
+        const loader = document.getElementById('loader');
+        const successMessage = document.getElementById('successMessage');
+        const emailError = document.getElementById('emailError');
+        const submitButton = form.querySelector('button');
 
+        function validateEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
 
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value.trim();
+
+            if (!validateEmail(email)) {
+                emailError.style.display = 'block';
+                return;
+            } else {
+                emailError.style.display = 'none';
+            }
+
+            // Hide button and show loader
+            submitButton.style.display = 'none';
+            loader.style.display = 'block';
+            successMessage.style.display = 'none';
+
+            setTimeout(() => {
+                loader.style.display = 'none';
+                successMessage.style.display = 'block';
+            }, 2000);
+        });
+    </script>
 </body>
 
 </html>
