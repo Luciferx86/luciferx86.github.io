@@ -6,6 +6,7 @@
                 "appID": "6J8D5373R2.com.luciferx86.miscridex",
                 "paths": [
                     "/details/*",
+                    "/boss_details/*",
                     "/"
                 ]
             }
