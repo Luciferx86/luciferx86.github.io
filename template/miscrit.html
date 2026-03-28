@@ -5,134 +5,270 @@
     <link rel="stylesheet" href="/assets/css/fonts.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blighted Flue - Miscridex</title>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="Blighted Flue - Miscridex" property="og:title">
-    <meta
-        content="The beloved Flue has been overtaken by the blight, giving it incredible power to harness the Fire Element"
-        property="og:description">
-    <meta content="https://cdn.worldofmiscrits.com/miscrits/blighted_flue_back.png" property="og:image" />
-    <meta content="website" property="og:type" />
-    <meta content="https://luciferx86.github.io/details/433/" property="og:url" />
-    <!-- Twitter Card -->
-    <meta content="summary_large_image" name="twitter:card" />
-    <meta content="Blighted Flue - Miscridex" name="twitter:title" />
-    <meta
-        content="The beloved Flue has been overtaken by the blight, giving it incredible power to harness the Fire Element"
-        name="twitter:description" />
-    <meta content="https://cdn.worldofmiscrits.com/miscrits/blighted_flue_back.png" name="twitter:image" />
-    </meta>
-    </meta>
-    <meta
-        content="The beloved Flue has been overtaken by the blight, giving it incredible power to harness the Fire Element"
-        property="og:description">
-    <meta content="https://cdn.worldofmiscrits.com/miscrits/blighted_flue_back.png" property="og:image" />
-    <meta content="website" property="og:type" />
-    <meta content="https://luciferx86.github.io/details/433/" property="og:url" />
-    <!-- Twitter Card -->
-    <meta content="summary_large_image" name="twitter:card" />
-    <meta content="Blighted Flue - Miscridex" name="twitter:title" />
-    <meta
-        content="The beloved Flue has been overtaken by the blight, giving it incredible power to harness the Fire Element"
-        name="twitter:description" />
-    <meta content="https://cdn.worldofmiscrits.com/miscrits/blighted_flue_back.png" name="twitter:image" />
-    </meta>
-    <meta content="https://cdn.worldofmiscrits.com/miscrits/blighted_flue_back.png" property="og:image" />
-    <meta content="website" property="og:type" />
-    <meta content="https://luciferx86.github.io/details/433/" property="og:url" />
-    <meta content="summary_large_image" name="twitter:card" />
-    <meta content="Blighted Flue - Miscridex" name="twitter:title" />
-    <meta
-        content="The beloved Flue has been overtaken by the blight, giving it incredible power to harness the Fire Element"
-        name="twitter:description" />
-    <meta content="https://cdn.worldofmiscrits.com/miscrits/blighted_flue_back.png" name="twitter:image" />
+    <title>{{NAME}} - Miscridex</title>
+
+{{META}}
 
     <style>
         body {
-            background-color: black;
-            color: white;
-            text-align: center;
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Outfit', Arial, sans-serif;
             margin: 0;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            line-height: 1.6;
         }
 
         .top-bar {
             display: flex;
             align-items: center;
-            background-color: #111;
-            padding: 10px 20px;
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         .top-bar img {
             height: 40px;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
         h1 {
-            font-family: 'BorisBlack';
+            font-family: 'BorisBlack', sans-serif;
             color: #FFCC00;
-            margin-top: 20px;
+            font-size: 3rem;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        p {
-            font-family: 'Outfit';
-            color: #cbf051;
-            max-width: 600px;
-            margin: 20px auto;
-        }
-
-        .local-logo {
-            margin-top: 30px;
-        }
-
-        .local-logo img {
-            height: 80px;
-        }
-
-        .store-buttons {
-            margin-top: 20px;
+        .badges {
             display: flex;
             justify-content: center;
             gap: 15px;
+            margin-bottom: 20px;
         }
 
-        .store-buttons img {
-            height: 50px;
+        .badge {
+            background-color: #2a2a2a;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #cbf051;
+            border: 1px solid #cbf051;
+        }
+
+        .hero-img {
+            max-width: 350px;
+            width: 100%;
+            border-radius: 20px;
+            background: radial-gradient(circle, rgba(255,204,0,0.2) 0%, rgba(13,13,13,1) 70%);
+            padding: 20px;
+        }
+
+        .section-title {
+            font-family: 'BorisBlack', sans-serif;
+            color: #FFCC00;
+            font-size: 2rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        .stat-name {
+            font-size: 0.9rem;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .stat-value.max { color: #ff4d4d; }
+        .stat-value.strong { color: #4CAF50; }
+        .stat-value.moderate { color: #FFC107; }
+        .stat-value.weak { color: #9e9e9e; }
+
+        /* Evolutions */
+        .evolutions-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .evolution-card {
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 5px solid #FFCC00;
+        }
+
+        .evolution-card h3 {
+            margin: 0 0 10px 0;
+            color: #cbf051;
+            font-size: 1.5rem;
+        }
+
+        .evolution-card p {
+            margin: 0;
+            color: #ddd;
+        }
+
+        /* Abilities */
+        .abilities-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .abilities-table th, .abilities-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        .abilities-table th {
+            background-color: #2a2a2a;
+            color: #FFCC00;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .abilities-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .abilities-table tr:hover {
+            background-color: #222;
+        }
+
+        .ability-name {
+            font-weight: bold;
+            color: #cbf051;
+            font-size: 1.1rem;
+        }
+
+        .ability-desc {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-top: 4px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            background-color: #333;
+            color: #fff;
+            margin-right: 5px;
+        }
+
+        .tag.fire { background-color: #d32f2f; }
+        .tag.water { background-color: #1976d2; }
+        .tag.nature { background-color: #388e3c; }
+        .tag.lightning { background-color: #fbc02d; color: #000; }
+        .tag.wind { background-color: #0288d1; }
+        .tag.earth { background-color: #795548; }
+        .tag.physical { background-color: #616161; }
+        .tag.misc { background-color: #9c27b0; }
+
+        @media (max-width: 768px) {
+            .abilities-table {
+                display: block;
+                overflow-x: auto;
+            }
+            h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.6rem; }
         }
     </style>
-
 </head>
 
 <body>
     <!-- Top Bar -->
     <div class="top-bar">
-        <img src="/assets/logo.png" alt="Header Logo">
-    </div>
-
-    <!-- Content -->
-    <h1>Blighted Flue - Miscridex</h1>
-    <img alt="Blighted Flue" src="https://cdn.worldofmiscrits.com/miscrits/blighted_flue_back.png"
-        style="max-width: 300px;" />
-    <p>The beloved Flue has been overtaken by the blight, giving it incredible power to harness the Fire Element</p>
-
-
-    <!-- Bigger Local Logo before store buttons -->
-    <div class="local-logo">
-        <img src="/assets/logo.png" alt="Main Logo">
-    </div>
-
-    <!-- Store Buttons -->
-    <div class="store-buttons">
-        <a href="https://play.google.com/store/apps/details?id=com.luciferx86.miscridex&hl=en" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                alt="Download from Playstore">
-        </a>
-        <a href="https://apps.apple.com/app/miscridex/id6752117190" target="_blank">
-            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                alt="Download from Appstore">
+        <a href="/">
+            <img src="/assets/logo.png" alt="Miscridex Logo">
         </a>
     </div>
 
+    <!-- Main Content -->
+    <div class="container">
+        <div class="header-section">
+            <div class="badges">
+                <div class="badge">{{ELEMENT}}</div>
+                <div class="badge">{{RARITY}}</div>
+                {{LOCATIONS}}
+            </div>
+            
+            <h1>{{NAME}}</h1>
+            
+            <img class="hero-img" alt="{{NAME}}" src="{{IMAGE_URL}}" />
+        </div>
+
+        <h2 class="section-title">Base Stats</h2>
+        <div class="stats-grid">
+            {{STATS}}
+        </div>
+
+        <h2 class="section-title">Evolutions</h2>
+        <div class="evolutions-list">
+            {{EVOLUTIONS}}
+        </div>
+
+        <h2 class="section-title">Abilities</h2>
+        <table class="abilities-table">
+            <thead>
+                <tr>
+                    <th>Lvl</th>
+                    <th>Ability</th>
+                    <th>Type</th>
+                    <th>AP / Acc</th>
+                    <th>Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ABILITIES}}
+            </tbody>
+        </table>
+    </div>
 </body>
 
 </html>

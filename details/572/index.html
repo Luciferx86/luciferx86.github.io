@@ -6,108 +6,487 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gravitron - Miscridex</title>
+
 <!-- DYNAMIC META START -->
 <meta property="og:title" content="Gravitron - Miscridex" />
 <meta property="og:description" content="Gravitron&#39;s speed comes from its ability to warp itself anywhere using a portal. No one knows when to expect Gravitron to show up" />
-<meta property="og:image" content="https://cdn.worldofmiscrits.com/miscrits/gravitron_back.png" />
+<meta property="og:image" content="https://cdn.worldofmiscrits.com/miscrits/gate_keeper_back.png" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://luciferx86.github.io/details/572/" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Gravitron - Miscridex" />
 <meta name="twitter:description" content="Gravitron&#39;s speed comes from its ability to warp itself anywhere using a portal. No one knows when to expect Gravitron to show up" />
-<meta name="twitter:image" content="https://cdn.worldofmiscrits.com/miscrits/gravitron_back.png" />
+<meta name="twitter:image" content="https://cdn.worldofmiscrits.com/miscrits/gate_keeper_back.png" />
 <!-- DYNAMIC META END -->
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <!-- Twitter Card -->
-    </meta>
-    </meta>
-    <!-- Twitter Card -->
-    </meta>
+
     <style>
         body {
-            background-color: black;
-            color: white;
-            text-align: center;
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Outfit', Arial, sans-serif;
             margin: 0;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            line-height: 1.6;
         }
 
         .top-bar {
             display: flex;
             align-items: center;
-            background-color: #111;
-            padding: 10px 20px;
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         .top-bar img {
             height: 40px;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
         h1 {
-            font-family: 'BorisBlack';
+            font-family: 'BorisBlack', sans-serif;
             color: #FFCC00;
-            margin-top: 20px;
+            font-size: 3rem;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        p {
-            font-family: 'Outfit';
-            color: #cbf051;
-            max-width: 600px;
-            margin: 20px auto;
-        }
-
-        .local-logo {
-            margin-top: 30px;
-        }
-
-        .local-logo img {
-            height: 80px;
-        }
-
-        .store-buttons {
-            margin-top: 20px;
+        .badges {
             display: flex;
             justify-content: center;
             gap: 15px;
+            margin-bottom: 20px;
         }
 
-        .store-buttons img {
-            height: 50px;
+        .badge {
+            background-color: #2a2a2a;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #cbf051;
+            border: 1px solid #cbf051;
+        }
+
+        .hero-img {
+            max-width: 350px;
+            width: 100%;
+            border-radius: 20px;
+            background: radial-gradient(circle, rgba(255,204,0,0.2) 0%, rgba(13,13,13,1) 70%);
+            padding: 20px;
+        }
+
+        .section-title {
+            font-family: 'BorisBlack', sans-serif;
+            color: #FFCC00;
+            font-size: 2rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        .stat-name {
+            font-size: 0.9rem;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .stat-value.max { color: #ff4d4d; }
+        .stat-value.strong { color: #4CAF50; }
+        .stat-value.moderate { color: #FFC107; }
+        .stat-value.weak { color: #9e9e9e; }
+
+        /* Evolutions */
+        .evolutions-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .evolution-card {
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 5px solid #FFCC00;
+        }
+
+        .evolution-card h3 {
+            margin: 0 0 10px 0;
+            color: #cbf051;
+            font-size: 1.5rem;
+        }
+
+        .evolution-card p {
+            margin: 0;
+            color: #ddd;
+        }
+
+        /* Abilities */
+        .abilities-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .abilities-table th, .abilities-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        .abilities-table th {
+            background-color: #2a2a2a;
+            color: #FFCC00;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .abilities-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .abilities-table tr:hover {
+            background-color: #222;
+        }
+
+        .ability-name {
+            font-weight: bold;
+            color: #cbf051;
+            font-size: 1.1rem;
+        }
+
+        .ability-desc {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-top: 4px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            background-color: #333;
+            color: #fff;
+            margin-right: 5px;
+        }
+
+        .tag.fire { background-color: #d32f2f; }
+        .tag.water { background-color: #1976d2; }
+        .tag.nature { background-color: #388e3c; }
+        .tag.lightning { background-color: #fbc02d; color: #000; }
+        .tag.wind { background-color: #0288d1; }
+        .tag.earth { background-color: #795548; }
+        .tag.physical { background-color: #616161; }
+        .tag.misc { background-color: #9c27b0; }
+
+        @media (max-width: 768px) {
+            .abilities-table {
+                display: block;
+                overflow-x: auto;
+            }
+            h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.6rem; }
         }
     </style>
-
 </head>
 
 <body>
     <!-- Top Bar -->
     <div class="top-bar">
-        <img src="/assets/logo.png" alt="Header Logo">
-    </div>
-
-    <!-- Content -->
-    <h1>Gravitron - Miscridex</h1>
-    <img alt="Gravitron" src="https://cdn.worldofmiscrits.com/miscrits/gravitron_back.png" style="max-width: 300px;"/>
-    <p>Gravitron&#39;s speed comes from its ability to warp itself anywhere using a portal. No one knows when to expect Gravitron to show up</p>
-
-
-    <!-- Bigger Local Logo before store buttons -->
-    <div class="local-logo">
-        <img src="/assets/logo.png" alt="Main Logo">
-    </div>
-
-    <!-- Store Buttons -->
-    <div class="store-buttons">
-        <a href="https://play.google.com/store/apps/details?id=com.luciferx86.miscridex&hl=en" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                alt="Download from Playstore">
-        </a>
-        <a href="https://apps.apple.com/app/miscridex/id6752117190" target="_blank">
-            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                alt="Download from Appstore">
+        <a href="/">
+            <img src="/assets/logo.png" alt="Miscridex Logo">
         </a>
     </div>
 
+    <!-- Main Content -->
+    <div class="container">
+        <div class="header-section">
+            <div class="badges">
+                <div class="badge">Earth</div>
+                <div class="badge">Exotic</div>
+                <div class="badge" style="border-color:#ccc; color:#ccc;">Moon</div>
+            </div>
+            
+            <h1>Gravitron</h1>
+            
+            <img class="hero-img" alt="Gravitron" src="https://cdn.worldofmiscrits.com/miscrits/gate_keeper_back.png" />
+        </div>
+
+        <h2 class="section-title">Base Stats</h2>
+        <div class="stats-grid">
+            
+            <div class="stat-card">
+                <div class="stat-name">Health</div>
+                <div class="stat-value strong">Strong</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-name">Speed</div>
+                <div class="stat-value max">Max</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-name">Elemental Attack</div>
+                <div class="stat-value weak">Weak</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-name">Physical Attack</div>
+                <div class="stat-value moderate">Elite</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-name">Elemental Defense</div>
+                <div class="stat-value strong">Strong</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-name">Physical Defense</div>
+                <div class="stat-value moderate">Moderate</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Evolutions</h2>
+        <div class="evolutions-list">
+            
+            <div class="evolution-card">
+                <h3>1. Gravitron</h3>
+                <p>Gravitron&#39;s speed comes from its ability to warp itself anywhere using a portal. No one knows when to expect Gravitron to show up</p>
+            </div>
+            <div class="evolution-card">
+                <h3>2. Portus</h3>
+                <p>Portus&#39; ability to split itself in two can create quite a jarring sight when its top half appears across the room from its bottom half</p>
+            </div>
+            <div class="evolution-card">
+                <h3>3. Impasse</h3>
+                <p>Impasse likes to play jokes by projecting just its wide, toothy grin in front of people and watching how startled they become</p>
+            </div>
+            <div class="evolution-card">
+                <h3>4. Gate Keeper</h3>
+                <p>It&#39;s impossible to tell which hand belongs to which arm when Gate Keeper is using portals to fling its fists with reckless abandon</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Abilities</h2>
+        <table class="abilities-table">
+            <thead>
+                <tr>
+                    <th>Lvl</th>
+                    <th>Ability</th>
+                    <th>Type</th>
+                    <th>AP / Acc</th>
+                    <th>Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td><div class="tag">1</div></td>
+                    <td>
+                        <div class="ability-name">Crumble</div>
+                        <div class="ability-desc">A simple Earth attack</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +1 Attack Power</div>
+                    </td>
+                    <td>
+                        <span class="tag earth">Earth</span>
+                        <span class="tag">Attack</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: 7</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">4</div></td>
+                    <td>
+                        <div class="ability-name">Debaser</div>
+                        <div class="ability-desc">Lowers your foe&#39;s Defenses by 5</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +1 to Debuff</div>
+                    </td>
+                    <td>
+                        <span class="tag misc">Misc</span>
+                        <span class="tag">Buff</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: -5</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">7</div></td>
+                    <td>
+                        <div class="ability-name">Smack</div>
+                        <div class="ability-desc">A simple Physical attack</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +1 Attack Power</div>
+                    </td>
+                    <td>
+                        <span class="tag physical">Physical</span>
+                        <span class="tag">Attack</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: 7</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">10</div></td>
+                    <td>
+                        <div class="ability-name">Shields Up</div>
+                        <div class="ability-desc">Raises your Defenses by 5</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +1 to Buff</div>
+                    </td>
+                    <td>
+                        <span class="tag misc">Misc</span>
+                        <span class="tag">Buff</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: 5</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">13</div></td>
+                    <td>
+                        <div class="ability-name">Rocky Road</div>
+                        <div class="ability-desc">An average Earth attack</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +2 Attack Power</div>
+                    </td>
+                    <td>
+                        <span class="tag earth">Earth</span>
+                        <span class="tag">Attack</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: 11</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">16</div></td>
+                    <td>
+                        <div class="ability-name">Sandstorm</div>
+                        <div class="ability-desc">Removes your elemental weakness</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: Replenishes 5 Health</div>
+                    </td>
+                    <td>
+                        <span class="tag misc">Misc</span>
+                        <span class="tag">Negate</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;"></td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">19</div></td>
+                    <td>
+                        <div class="ability-name">Fist Pump</div>
+                        <div class="ability-desc">Raises your Physical Attack by 10</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +2 to Buff</div>
+                    </td>
+                    <td>
+                        <span class="tag misc">Misc</span>
+                        <span class="tag">Buff</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: 10</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">22</div></td>
+                    <td>
+                        <div class="ability-name">Laser Focus</div>
+                        <div class="ability-desc">Raises your Accuracy by 20%</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: Replenishes 15 Health</div>
+                    </td>
+                    <td>
+                        <span class="tag misc">Misc</span>
+                        <span class="tag">Buff</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: 20</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">25</div></td>
+                    <td>
+                        <div class="ability-name">Destruction</div>
+                        <div class="ability-desc">A massively powerful Physical attack</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +10% Accuracy</div>
+                    </td>
+                    <td>
+                        <span class="tag physical">Physical</span>
+                        <span class="tag">Attack</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: 25 / Acc: 90%</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">28</div></td>
+                    <td>
+                        <div class="ability-name">Lunar Lull</div>
+                        <div class="ability-desc">Puts your foe to Sleep for 1 turn, or until you attack them. (1 Use)</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: Provides 5 Block</div>
+                    </td>
+                    <td>
+                        <span class="tag misc">Misc</span>
+                        <span class="tag">Sleep</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">Acc: 170%</td>
+                    <td style="font-size: 0.85rem;">1 turns</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">30</div></td>
+                    <td>
+                        <div class="ability-name">Earthquake</div>
+                        <div class="ability-desc">A more than massively powerful Earth attack</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +5% Accuracy</div>
+                    </td>
+                    <td>
+                        <span class="tag earth">Earth</span>
+                        <span class="tag">Attack</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: 30 / Acc: 95%</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">35</div></td>
+                    <td>
+                        <div class="ability-name">Fists of Fury</div>
+                        <div class="ability-desc">A simple Physical attack that hits 4 times, raises your Physical Attack by 5 and grants immunity to Sleep and Confuse for 3 turns</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +1 Repeat</div>
+                    </td>
+                    <td>
+                        <span class="tag physical">Physical</span>
+                        <span class="tag">Attack</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: 8</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 
 </html>
