@@ -7,6 +7,10 @@
                 "paths": [
                     "/details/*",
                     "/boss_guide/*",
+                    "/profile",
+                    "/home",
+                    "/directory",
+                    "/pvp",
                     "/"
                 ]
             }
