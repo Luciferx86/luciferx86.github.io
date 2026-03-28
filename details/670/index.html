@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/assets/css/fonts.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piskie - Miscridex</title>
+
+<!-- DYNAMIC META START -->
+<meta property="og:title" content="Piskie - Miscridex" />
+<meta property="og:description" content="Piskie scatters sparkling powder wherever she flutters, instantly reviving any plant it comes into contact with" />
+<meta property="og:image" content="https://cdn.worldofmiscrits.com/miscrits/seelie_back.png" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://luciferx86.github.io/details/670/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Piskie - Miscridex" />
+<meta name="twitter:description" content="Piskie scatters sparkling powder wherever she flutters, instantly reviving any plant it comes into contact with" />
+<meta name="twitter:image" content="https://cdn.worldofmiscrits.com/miscrits/seelie_back.png" />
+<!-- DYNAMIC META END -->
+
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Outfit', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            display: flex;
+            align-items: center;
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .top-bar img {
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'BorisBlack', sans-serif;
+            color: #FFCC00;
+            font-size: 3rem;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            background-color: #2a2a2a;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #cbf051;
+            border: 1px solid #cbf051;
+        }
+
+        .hero-img {
+            max-width: 350px;
+            width: 100%;
+            border-radius: 20px;
+            background: radial-gradient(circle, rgba(255,204,0,0.2) 0%, rgba(13,13,13,1) 70%);
+            padding: 20px;
+        }
+
+        .section-title {
+            font-family: 'BorisBlack', sans-serif;
+            color: #FFCC00;
+            font-size: 2rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        .stat-name {
+            font-size: 0.9rem;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .stat-value.max { color: #ff4d4d; }
+        .stat-value.strong { color: #4CAF50; }
+        .stat-value.moderate { color: #FFC107; }
+        .stat-value.weak { color: #9e9e9e; }
+
+        /* Evolutions */
+        .evolutions-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .evolution-card {
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 5px solid #FFCC00;
+        }
+
+        .evolution-card h3 {
+            margin: 0 0 10px 0;
+            color: #cbf051;
+            font-size: 1.5rem;
+        }
+
+        .evolution-card p {
+            margin: 0;
+            color: #ddd;
+        }
+
+        /* Abilities */
+        .abilities-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .abilities-table th, .abilities-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        .abilities-table th {
+            background-color: #2a2a2a;
+            color: #FFCC00;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .abilities-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .abilities-table tr:hover {
+            background-color: #222;
+        }
+
+        .ability-name {
+            font-weight: bold;
+            color: #cbf051;
+            font-size: 1.1rem;
+        }
+
+        .ability-desc {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-top: 4px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            background-color: #333;
+            color: #fff;
+            margin-right: 5px;
+        }
+
+        .tag.fire { background-color: #d32f2f; }
+        .tag.water { background-color: #1976d2; }
+        .tag.nature { background-color: #388e3c; }
+        .tag.lightning { background-color: #fbc02d; color: #000; }
+        .tag.wind { background-color: #0288d1; }
+        .tag.earth { background-color: #795548; }
+        .tag.physical { background-color: #616161; }
+        .tag.misc { background-color: #9c27b0; }
+
+        @media (max-width: 768px) {
+            .abilities-table {
+                display: block;
+                overflow-x: auto;
+            }
+            h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="/">
+            <img src="/assets/logo.png" alt="Miscridex Logo">
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="header-section">
+            <div class="badges">
+                <div class="badge">Nature</div>
+                <div class="badge">Exotic</div>
+                <div class="badge" style="border-color:#ccc; color:#ccc;">Miscrian Jungle</div>
+            </div>
+            
+            <h1>Piskie</h1>
+            
+            <img class="hero-img" alt="Piskie" src="https://cdn.worldofmiscrits.com/miscrits/seelie_back.png" />
+        </div>
+
+        <h2 class="section-title">Base Stats</h2>
+        <div class="stats-grid">
+            
+            <div class="stat-card">
+                <div class="stat-name">Health</div>
+                <div class="stat-value moderate">Moderate</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-name">Speed</div>
+                <div class="stat-value moderate">Moderate</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-name">Elemental Attack</div>
+                <div class="stat-value max">Max</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-name">Physical Attack</div>
+                <div class="stat-value weak">Weak</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-name">Elemental Defense</div>
+                <div class="stat-value max">Max</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-name">Physical Defense</div>
+                <div class="stat-value moderate">Elite</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Evolutions</h2>
+        <div class="evolutions-list">
+            
+            <div class="evolution-card">
+                <h3>1. Piskie</h3>
+                <p>Piskie scatters sparkling powder wherever she flutters, instantly reviving any plant it comes into contact with</p>
+            </div>
+            <div class="evolution-card">
+                <h3>2. Pookie</h3>
+                <p>Ever a gentle creature, Pookie uses her magic to create patches of overgrowth where weaker Miscrits can take shelter and rest in</p>
+            </div>
+            <div class="evolution-card">
+                <h3>3. Lovelie</h3>
+                <p>To those who attempt to harm her, Lovelie&#39;s plated armor becomes as hard as steel. But to those who seek comfort, it becomes as soft as a pillow</p>
+            </div>
+            <div class="evolution-card">
+                <h3>4. Seelie</h3>
+                <p>Seelie is surrounded by a cloud of magical powder that restores the body and cleanses negative emotions, allowing her to pacify most opponents through her mere presence</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Abilities</h2>
+        <table class="abilities-table">
+            <thead>
+                <tr>
+                    <th>Lvl</th>
+                    <th>Ability</th>
+                    <th>Type</th>
+                    <th>AP / Acc</th>
+                    <th>Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td><div class="tag">1</div></td>
+                    <td>
+                        <div class="ability-name">Wisp</div>
+                        <div class="ability-desc">A simple Nature attack</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +1 Attack Power</div>
+                    </td>
+                    <td>
+                        <span class="tag nature">Nature</span>
+                        <span class="tag">Attack</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: 7</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">4</div></td>
+                    <td>
+                        <div class="ability-name">Body Armor</div>
+                        <div class="ability-desc">Raises your Physical Defense by 7</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +1 to Buff</div>
+                    </td>
+                    <td>
+                        <span class="tag misc">Misc</span>
+                        <span class="tag">Buff</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: 7</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">7</div></td>
+                    <td>
+                        <div class="ability-name">Slap</div>
+                        <div class="ability-desc">A simple Physical attack</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +1 Attack Power</div>
+                    </td>
+                    <td>
+                        <span class="tag physical">Physical</span>
+                        <span class="tag">Attack</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: 7</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">10</div></td>
+                    <td>
+                        <div class="ability-name">Pollen</div>
+                        <div class="ability-desc">Lowers your foe&#39;s Accuracy by 10%</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +10% Accuracy</div>
+                    </td>
+                    <td>
+                        <span class="tag misc">Misc</span>
+                        <span class="tag">Buff</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: -10 / Acc: 90%</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">13</div></td>
+                    <td>
+                        <div class="ability-name">Fairy Fire</div>
+                        <div class="ability-desc">An average Nature attack that grants Ethereal for 1 turn</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +2 Attack Power</div>
+                    </td>
+                    <td>
+                        <span class="tag nature">Nature</span>
+                        <span class="tag">Attack</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: 10</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">16</div></td>
+                    <td>
+                        <div class="ability-name">Tickle</div>
+                        <div class="ability-desc">Lowers your foe&#39;s Attacks by 8</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +2 to Debuff</div>
+                    </td>
+                    <td>
+                        <span class="tag misc">Misc</span>
+                        <span class="tag">Buff</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: -8</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">19</div></td>
+                    <td>
+                        <div class="ability-name">Bloom</div>
+                        <div class="ability-desc">A powerful Nature attack</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: Replenishes 5 Health</div>
+                    </td>
+                    <td>
+                        <span class="tag nature">Nature</span>
+                        <span class="tag">Attack</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: 15 / Acc: 95%</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">22</div></td>
+                    <td>
+                        <div class="ability-name">Sylvan Shield</div>
+                        <div class="ability-desc">Applies 2 stacks of Barbed to the user and Paralyzes foe for 1 turn</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +10% Accuracy</div>
+                    </td>
+                    <td>
+                        <span class="tag misc">Misc</span>
+                        <span class="tag">Barbed</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: 10 / Acc: 90%</td>
+                    <td style="font-size: 0.85rem;">2 turns</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">25</div></td>
+                    <td>
+                        <div class="ability-name">Pacifying Pixiedust</div>
+                        <div class="ability-desc">Cleanses yourself and heals yourself by 15 HP with a 40% chance to Sleep foe for 1 turn. 3 turns cooldown</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +10% Accuracy</div>
+                    </td>
+                    <td>
+                        <span class="tag misc">Misc</span>
+                        <span class="tag">Cleanser</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;"></td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">28</div></td>
+                    <td>
+                        <div class="ability-name">Verdant Volley</div>
+                        <div class="ability-desc">A massively powerful Nature attack</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +10% Accuracy</div>
+                    </td>
+                    <td>
+                        <span class="tag nature">Nature</span>
+                        <span class="tag">Attack</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: 25 / Acc: 90%</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">30</div></td>
+                    <td>
+                        <div class="ability-name">Share &amp; Care</div>
+                        <div class="ability-desc">Recovers a fair amount of your health then force switches the user 3 times consecutively, healing yourself by 20 HP after each switch. (1 Use)</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +5 Heal</div>
+                    </td>
+                    <td>
+                        <span class="tag misc">Misc</span>
+                        <span class="tag">Heal</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: 15 / Acc: 170%</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+                <tr>
+                    <td><div class="tag">35</div></td>
+                    <td>
+                        <div class="ability-name">Pretty Panzer Powderstorm</div>
+                        <div class="ability-desc">A massively powerful Nature attack that provides 15 Block</div>
+                        <div style="color: #ff9800; font-size: 0.85rem; margin-top: 4px;">Enchant: +4 Attack Power</div>
+                    </td>
+                    <td>
+                        <span class="tag nature">Nature</span>
+                        <span class="tag">Attack</span>
+                    </td>
+                    <td style="white-space:nowrap; color:#aaa;">AP: 29</td>
+                    <td style="font-size: 0.85rem;">-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
