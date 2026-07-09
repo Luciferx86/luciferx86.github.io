@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Miscridex Battle History Beta</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #050505;
+            --card: #101010;
+            --green: #C8F53D;
+            --yellow: #F6C600;
+            --text: #ffffff;
+            --muted: #9f9f9f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: min(1200px, 92%);
+            margin: auto;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at top left, rgba(200, 245, 61, .15), transparent 35%),
+                radial-gradient(circle at bottom right, rgba(246, 198, 0, .08), transparent 35%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-logo {
+            margin-bottom: 30px;
+        }
+
+        .hero-logo img {
+            width: 420px;
+            max-width: 70vw;
+            height: auto;
+        }
+
+        footer {
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid #161616;
+        }
+
+        footer img {
+            width: 140px;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            color: #666;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 10px 18px;
+            border: 1px solid rgba(200, 245, 61, .5);
+            border-radius: 999px;
+            color: var(--green);
+            margin-bottom: 24px;
+        }
+
+        .powered-by {
+            color: #888;
+            font-size: .85rem;
+            letter-spacing: 2px;
+            margin-top: 8px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(3.5rem, 9vw, 7rem);
+            line-height: .95;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+            text-shadow:
+                0 0 10px rgba(200, 245, 61, .7),
+                0 0 25px rgba(200, 245, 61, .25);
+        }
+
+        .subtitle {
+            max-width: 750px;
+            margin: auto;
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 32px;
+            background: var(--green);
+            color: black;
+            text-decoration: none;
+            padding: 18px 36px;
+            border-radius: 14px;
+            font-weight: 700;
+            box-shadow: 0 0 25px rgba(200, 245, 61, .35);
+            transition: .2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero-info {
+            margin-top: 22px;
+            color: var(--muted);
+        }
+
+        section {
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            border-radius: 22px;
+            padding: 28px;
+        }
+
+        .feature h3 {
+            margin-bottom: 12px;
+            color: var(--green);
+        }
+
+        .feature p {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 24px;
+        }
+
+        .caption {
+            text-align: center;
+            margin-top: 14px;
+            color: var(--muted);
+        }
+
+        .beta-card {
+            background: var(--card);
+            border: 1px solid #222;
+            border-radius: 24px;
+            padding: 36px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .beta-card ul {
+            list-style: none;
+            display: grid;
+            gap: 14px;
+        }
+
+        .beta-card li {
+            color: white;
+        }
+
+        .cta {
+            text-align: center;
+            padding-bottom: 120px;
+        }
+
+        .cta h2 {
+            font-family: 'Anton', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            color: var(--muted);
+            margin-bottom: 24px;
+        }
+
+        @media(max-width:900px) {
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2.3rem;
+            }
+
+            .cta h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+
+        <div class="container hero-content">
+
+            <div class="hero-logo">
+                <img src="/assets/logo.png" alt="Miscridex">
+            </div>
+            <div class="powered-by">
+                MISCRIDEX BETA PROGRAM
+            </div>
+
+            <div class="badge">
+                LIMITED BETA • 50 iOS • 50 ANDROID
+            </div>
+
+            <h1>
+                BATTLE HISTORY<br>
+                HAS ARRIVED
+            </h1>
+
+            <p class="subtitle">
+                Track your Platinum Arena battles, discover powerful analytics,
+                and uncover your arena story.
+            </p>
+
+            <a href="YOUR_GOOGLE_FORM_LINK" class="btn">
+                APPLY FOR BETA
+            </a>
+
+            <div class="hero-info">
+                ⚔️ Active Platinum Arena players preferred
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="container">
+
+            <h2 class="section-title">
+                WHAT'S INCLUDED
+            </h2>
+
+            <div class="gallery">
+
+                <div>
+                    <img src="/assets/verification.webp" alt="">
+                    <div class="feature">
+                        <h3>🔒 Verify Account</h3>
+                        <p>
+                            Securely link your Miscrits account with a simple one-time verification process.
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <img src="/assets/analytics.webp" alt="">
+                    <div class="feature">
+                        <h3>📊 Battle Analytics</h3>
+                        <p>
+                            Track win rate, streaks, champions, best squad and nemesis.
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <img src="/assets/battle-details.webp" alt="">
+                    <div class="feature">
+                        <h3>📜 Battle Logs</h3>
+                        <p>
+                            View recent battles, opponents, team compositions and point changes.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="container">
+
+            <h2 class="section-title">
+                BETA DETAILS
+            </h2>
+
+            <div class="beta-card">
+
+                <ul>
+                    <li>📱 50 iOS testers</li>
+                    <li>🤖 50 Android testers</li>
+                    <li>⏱️ Data refreshes every 12 hours</li>
+                    <li>⚔️ Active Platinum Arena players prioritized</li>
+                    <li>🚧 Features may change during beta</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="cta">
+
+        <div class="container">
+
+            <h2>
+                READY TO MAKE HISTORY?
+            </h2>
+
+            <p>
+                Help shape one of the biggest competitive updates ever added to Miscridex.
+            </p>
+
+            <a href="YOUR_GOOGLE_FORM_LINK" class="btn">
+                APPLY FOR BETA
+            </a>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <img src="/assets/logo.png" alt="Miscridex">
+
+        <p>
+            © Miscridex • Battle History Beta
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
