@@ -247,6 +247,144 @@
                 font-size: 2.5rem;
             }
         }
+
+        .slots-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            margin: 0 auto 32px auto;
+            max-width: 620px;
+            padding: 0 16px;
+        }
+
+        .slot-gauge {
+            background: #101010;
+            border: 1px solid #222;
+            border-radius: 18px;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex: 1 1 0%;
+            min-width: 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .slot-gauge:hover {
+            transform: translateY(-2px);
+        }
+
+        .slot-gauge.ios-gauge:hover {
+            border-color: rgba(200, 245, 61, 0.4);
+        }
+
+        .slot-gauge.android-gauge:hover {
+            border-color: rgba(246, 198, 0, 0.4);
+        }
+
+        .gauge-svg-container {
+            position: relative;
+            width: 72px;
+            height: 72px;
+            flex-shrink: 0;
+        }
+
+        .gauge-svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .gauge-bg {
+            fill: none;
+            stroke: #1e1e1e;
+            stroke-width: 7;
+        }
+
+        .gauge-value {
+            fill: none;
+            stroke-width: 7;
+            stroke-linecap: round;
+            stroke-dasharray: 238.76;
+            stroke-dashoffset: 238.76;
+        }
+
+        .ios-value {
+            stroke: var(--green);
+            filter: drop-shadow(0 0 4px rgba(200, 245, 61, 0.5));
+            animation: animate-ios-gauge 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .android-value {
+            stroke: var(--yellow);
+            filter: drop-shadow(0 0 4px rgba(246, 198, 0, 0.5));
+            animation: animate-android-gauge 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes animate-ios-gauge {
+            to {
+                stroke-dashoffset: 152.81;
+            }
+        }
+
+        @keyframes animate-android-gauge {
+            to {
+                stroke-dashoffset: 116.99;
+            }
+        }
+
+        .gauge-info {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .gauge-platform {
+            font-size: 0.75rem;
+            color: var(--muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 2px;
+            white-space: nowrap;
+        }
+
+        .gauge-number {
+            font-family: 'Anton', sans-serif;
+            font-size: 1.6rem;
+            color: var(--text);
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+
+        .gauge-status {
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-top: 3px;
+        }
+
+        .ios-status {
+            color: var(--green);
+        }
+
+        .android-status {
+            color: var(--yellow);
+        }
+
+        @media(max-width: 640px) {
+            .slots-container {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .slot-gauge {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
     </style>
 </head>
 
@@ -265,6 +403,35 @@
 
             <div class="badge">
                 LIMITED BETA • <s>50</s> 100 💯 iOS • <s>50</s> 100 💯 ANDROID
+            </div>
+
+            <div class="slots-container">
+                <div class="slot-gauge ios-gauge">
+                    <div class="gauge-svg-container">
+                        <svg class="gauge-svg" viewBox="0 0 100 100">
+                            <circle class="gauge-bg" cx="50" cy="50" r="38" />
+                            <circle class="gauge-value ios-value" cx="50" cy="50" r="38" />
+                        </svg>
+                    </div>
+                    <div class="gauge-info">
+                        <span class="gauge-platform">iOS Slots</span>
+                        <span class="gauge-number">36/100</span>
+                        <span class="gauge-status ios-status">64 slots available</span>
+                    </div>
+                </div>
+                <div class="slot-gauge android-gauge">
+                    <div class="gauge-svg-container">
+                        <svg class="gauge-svg" viewBox="0 0 100 100">
+                            <circle class="gauge-bg" cx="50" cy="50" r="38" />
+                            <circle class="gauge-value android-value" cx="50" cy="50" r="38" />
+                        </svg>
+                    </div>
+                    <div class="gauge-info">
+                        <span class="gauge-platform">Android Slots</span>
+                        <span class="gauge-number">51/100</span>
+                        <span class="gauge-status android-status">49 slots available</span>
+                    </div>
+                </div>
             </div>
 
             <h1>
