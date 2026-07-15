@@ -17,6 +17,7 @@
             --card: #101010;
             --green: #C8F53D;
             --yellow: #F6C600;
+            --orange: #F67b00;
             --text: #ffffff;
             --muted: #9f9f9f;
         }
@@ -312,26 +313,26 @@
         }
 
         .ios-value {
-            stroke: var(--green);
+            stroke: var(--yellow);
             filter: drop-shadow(0 0 4px rgba(200, 245, 61, 0.5));
             animation: animate-ios-gauge 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
         .android-value {
-            stroke: var(--yellow);
+            stroke: var(--orange);
             filter: drop-shadow(0 0 4px rgba(246, 198, 0, 0.5));
             animation: animate-android-gauge 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
         @keyframes animate-ios-gauge {
             to {
-                stroke-dashoffset: 152.81;
+                stroke-dashoffset: 133.71;
             }
         }
 
         @keyframes animate-android-gauge {
             to {
-                stroke-dashoffset: 116.99;
+                stroke-dashoffset: 71.63;
             }
         }
 
@@ -367,11 +368,11 @@
         }
 
         .ios-status {
-            color: var(--green);
+            color: var(--yellow);
         }
 
         .android-status {
-            color: var(--yellow);
+            color: var(--orange);
         }
 
         @media(max-width: 640px) {
@@ -415,8 +416,8 @@
                     </div>
                     <div class="gauge-info">
                         <span class="gauge-platform">iOS Slots</span>
-                        <span class="gauge-number">36/100</span>
-                        <span class="gauge-status ios-status">64 slots available</span>
+                        <span class="gauge-number">44/100</span>
+                        <span class="gauge-status ios-status">56 slots available</span>
                     </div>
                 </div>
                 <div class="slot-gauge android-gauge">
@@ -428,8 +429,8 @@
                     </div>
                     <div class="gauge-info">
                         <span class="gauge-platform">Android Slots</span>
-                        <span class="gauge-number">51/100</span>
-                        <span class="gauge-status android-status">49 slots available</span>
+                        <span class="gauge-number">70/100</span>
+                        <span class="gauge-status android-status">30 slots available</span>
                     </div>
                 </div>
             </div>
