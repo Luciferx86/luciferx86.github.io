@@ -141,6 +141,20 @@
             transform: translateY(-2px);
         }
 
+        .btn.disabled {
+            background: #1a1a1a;
+            color: #555;
+            box-shadow: none;
+            cursor: not-allowed;
+            pointer-events: none;
+            border: 1px solid #333;
+        }
+
+        .beta-closed-badge {
+            border-color: rgba(255, 69, 58, 0.4) !important;
+            color: #ff453a !important;
+        }
+
         .hero-info {
             margin-top: 22px;
             color: var(--muted);
@@ -326,13 +340,13 @@
 
         @keyframes animate-ios-gauge {
             to {
-                stroke-dashoffset: 133.71;
+                stroke-dashoffset: 105.05;
             }
         }
 
         @keyframes animate-android-gauge {
             to {
-                stroke-dashoffset: 71.63;
+                stroke-dashoffset: 33.43;
             }
         }
 
@@ -402,8 +416,8 @@
                 MISCRIDEX BETA PROGRAM
             </div>
 
-            <div class="badge">
-                LIMITED BETA • <s>50</s> 100 💯 iOS • <s>50</s> 100 💯 ANDROID
+            <div class="badge beta-closed-badge">
+                BETA CLOSED
             </div>
 
             <div class="slots-container">
@@ -416,8 +430,7 @@
                     </div>
                     <div class="gauge-info">
                         <span class="gauge-platform">iOS Slots</span>
-                        <span class="gauge-number">44/100</span>
-                        <span class="gauge-status ios-status">56 slots available</span>
+                        <span class="gauge-number">56/100</span>
                     </div>
                 </div>
                 <div class="slot-gauge android-gauge">
@@ -429,8 +442,7 @@
                     </div>
                     <div class="gauge-info">
                         <span class="gauge-platform">Android Slots</span>
-                        <span class="gauge-number">70/100</span>
-                        <span class="gauge-status android-status">30 slots available</span>
+                        <span class="gauge-number">86/100</span>
                     </div>
                 </div>
             </div>
@@ -445,8 +457,8 @@
                 and uncover your arena story.
             </p>
 
-            <a href="https://forms.gle/Qg9c9cUtmu7Zx21x5" class="btn">
-                APPLY FOR BETA
+            <a href="#" class="btn disabled" onclick="return false;">
+                BETA CLOSED
             </a>
 
             <div class="hero-info">
@@ -532,15 +544,15 @@
         <div class="container">
 
             <h2>
-                READY TO MAKE HISTORY?
+                THANK YOU FOR THE INTEREST!
             </h2>
 
             <p>
-                Help shape one of the biggest competitive updates ever added to Miscridex.
+                Beta registration is now closed. We are preparing for the official launch!
             </p>
 
-            <a href="https://forms.gle/Qg9c9cUtmu7Zx21x5" class="btn">
-                APPLY FOR BETA
+            <a href="#" class="btn disabled" onclick="return false;">
+                BETA CLOSED
             </a>
 
         </div>
